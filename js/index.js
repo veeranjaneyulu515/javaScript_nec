@@ -8,21 +8,24 @@
 // image.alt="image"
 // image.style.width="32%"
 // card.appendChild(image)
-function loadJSON(file,callback){
+var loadJSON=(file,callback)=>{
 var ajax=new XMLHttpRequest();
 ajax.overrideMimeType("application/json");
 ajax.open("GET",file,true);
-ajax.onreadystatechange=function(){
+ajax.onreadystatechange=()=>{
     if(ajax.readyState===4 && ajax.status===200)
     callback(ajax.responseText);
 }
 ajax.send();
-
  }
-
- loadJSON("json_data/data.json",function(text){
+ loadJSON("json_data/data.json",(text)=>{
 
     var d=JSON.parse(text);
-    console.log(d);
-})
+  var details (d.detail);
+});
+var h= document.createElement("h1");
+h.setAttribute("class","name");
+h.textContent=cse.name;
+root.appendChild(h);
+
 
