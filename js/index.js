@@ -19,13 +19,34 @@ ajax.onreadystatechange=()=>{
 ajax.send();
  }
  loadJSON("json_data/data.json",(text)=>{
-
     var d=JSON.parse(text);
-  var details (d.detail);
+    console.log(d)
+    data(d.details);
+    other(d.multipledata)
 });
-var h= document.createElement("h1");
-h.setAttribute("class","name");
-h.textContent=cse.name;
-root.appendChild(h);
+function data(d){
+    var root=document.getElementById("root");
+    var h= document.createElement("h1");
+    h.setAttribute("class","name");
+    h.textContent=d.name;
+    root.appendChild(h);
+        var root=document.getElementById("root");
+        var h= document.createElement("h1");
+        h.setAttribute("class","name");
+        h.textContent=d.name;
+        root.appendChild(h);
+    }
+ 
+function other(r){
+    var ul=document.createElement("ul");
+    root.appendChild(ul);
+    for(let i=0;i<r.length;i++)
+    {
+         var li=document.createElement("li");
+         li.textContent=r[i].name;
+         ul.appendChild(li);
+
+    }
+}
 
 
